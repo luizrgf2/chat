@@ -3,6 +3,7 @@ import { UserInterface } from "../../../src/domain/entities/user"
 export const  UserValid =  {
     email:"teste@gmail.com",
     name:"Felipe Ramos",
+    pictureUrl:"https://example.image.com.br"
 } as UserInterface
 
 

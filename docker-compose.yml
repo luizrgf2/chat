@@ -1,0 +1,9 @@
+version: '3.9'
+services:
+  db:
+    image: mysql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    container_name: mysql-db-chat
+    ports:
+      - "3304:3306"

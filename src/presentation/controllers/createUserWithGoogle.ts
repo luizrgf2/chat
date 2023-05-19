@@ -12,7 +12,7 @@ export class CreateUserWithGoogleController implements ControllerInterface{
         const {body} = input
         if(!body) return  {status:400,error:"Compo da requisição inválido!"} 
         const response = await this.useCase.exec({
-            access_token:body.access_token
+            ...body
         })
         if(response.left) return {status:response.left.code,error:response.left.message}
         return {

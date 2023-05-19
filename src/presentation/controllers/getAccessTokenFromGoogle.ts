@@ -1,14 +1,14 @@
-import { LoginWithGoogleUseCaseInput, LoginWithGoogleUseCaseInterface, LoginWithGoogleUseCaseOutput } from "../../domain/useCases/loginUserWithGoogle";
+import { GetAccessTokenFromGoogleUseCaseInput, GetAccessTokenFromGoogleUseCaseInterface, GetAccessTokenFromGoogleUseCaseOutput } from "../../domain/useCases/getAccessTokenFromGoogle";
 import { ControllerInterface } from "../interfaces/controller";
 import { HttpRequest, HttpResponse } from "../interfaces/http";
 
-export class LoginUserWithGoogleController implements ControllerInterface{
+export class GetAccessTokenFromGoogleController implements ControllerInterface{
 
     constructor(
-        private readonly useCase: LoginWithGoogleUseCaseInterface
+        private readonly useCase: GetAccessTokenFromGoogleUseCaseInterface
     ){}
 
-    async exec (input: HttpRequest<LoginWithGoogleUseCaseInput>) : Promise<HttpResponse<LoginWithGoogleUseCaseOutput>>{
+    async exec (input: HttpRequest<GetAccessTokenFromGoogleUseCaseInput>) : Promise<HttpResponse<GetAccessTokenFromGoogleUseCaseOutput>>{
         const {body} = input
         if(!body) return  {status:400,error:"Compo da requisição inválido!"} 
         const response = await this.useCase.exec({

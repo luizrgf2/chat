@@ -13,7 +13,7 @@ describe("createUserWithGoogleUseCase tests", function(){
         const sut = new CreateUserWithGoogleUseCase(repo,google)
 
         const res = await sut.exec({
-            access_token:"valid_token"
+            accessToken:"valid_token"
         })
 
         expect(res.right).not.toBeUndefined()
@@ -27,7 +27,7 @@ describe("createUserWithGoogleUseCase tests", function(){
         const sut = new CreateUserWithGoogleUseCase(repo,google)
 
         const res = await sut.exec({
-            access_token:"invalid_token"
+            accessToken:"invalid_token"
         })
 
         expect(res.left).not.toBeUndefined()
@@ -38,7 +38,7 @@ describe("createUserWithGoogleUseCase tests", function(){
         const sut = new CreateUserWithGoogleUseCase(repo,google)
 
         const res = await sut.exec({
-            access_token:"valid_token"
+            accessToken:"valid_token"
         })
 
         expect(res.left).not.toBeUndefined()

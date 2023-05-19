@@ -18,7 +18,7 @@ export class InMemoryGoogleOauth2 implements GoogleOauth2Interface {
   }
 
   async getTokens(code: string): Promise<Either<ErrorBase, GoogleToken>> {
-    // Implementação fictícia para obter tokens com base no código de autorização
+    
     const token: GoogleToken = {
       access_token: "ACCESS_TOKEN",
       expires_in: 3600,
@@ -27,9 +27,10 @@ export class InMemoryGoogleOauth2 implements GoogleOauth2Interface {
       token_type: "Bearer",
     };
 
-    this.tokens[token.access_token] = token;
 
-    return Promise.resolve(Right.create(token));
+    if(code === "valid_code") return Right.create(token)
+
+    return Left.create(new ErrorBase("Erro nos token",401))
   }
 
   async getUserInfos(idToken: string): Promise<Either<ErrorBase, UserInformation>> {

@@ -15,7 +15,7 @@ export class CreateUserWithGoogleUseCase implements CreateUserWithGoogleUseCaseI
     
     async exec(input: CreateUserWithGoogleUseCaseInput) : Promise<Either<ErrorBase, CreateUserWithGoogleUseCaseOutput>>{
 
-        const getUserInfoOrError = await this.googleService.getUserInfos(input.access_token)
+        const getUserInfoOrError = await this.googleService.getUserInfos(input.accessToken)
         if(getUserInfoOrError.left) return Left.create(getUserInfoOrError.left)
 
         const userGoogleInfos = getUserInfoOrError.right

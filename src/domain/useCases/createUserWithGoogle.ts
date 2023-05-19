@@ -3,7 +3,7 @@ import { Either } from "../errors/either"
 import { ErrorBase } from "../errors/errorBase"
 
 export interface CreateUserWithGoogleUseCaseInput{
-    access_token:string
+    accessToken:string
 }
 
 export interface CreateUserWithGoogleUseCaseOutput{

@@ -14,13 +14,13 @@ describe("createUserWithGoogleUseCase tests", function(){
 
     it("should be login with user already exists", async function(){
         await createUser.exec({
-            access_token:"valid_token"
+            accessToken:"valid_token"
         })
 
         const sut = new LoginUserWithGoogleUseCase(repo,google)
 
         const res = await sut.exec({
-            access_token:"valid_token"
+            accessToken:"valid_token"
         })
 
         expect(res.right).not.toBeUndefined()
@@ -34,7 +34,7 @@ describe("createUserWithGoogleUseCase tests", function(){
         const sut = new LoginUserWithGoogleUseCase(repo,google)
 
         const res = await sut.exec({
-            access_token:"another_token"
+            accessToken:"another_token"
         })
 
         expect(res.left).not.toBeUndefined()
@@ -45,7 +45,7 @@ describe("createUserWithGoogleUseCase tests", function(){
         const sut = new LoginUserWithGoogleUseCase(repo,google)
 
         const res = await sut.exec({
-            access_token:"invalid_token"
+            accessToken:"invalid_token"
         })
 
         expect(res.left).not.toBeUndefined()

@@ -4,6 +4,7 @@ import { GoogleOauth2Interface, GoogleToken, UserInformation } from "../app/inte
 import { GOOGLE_AUTH_URI, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_REDIRECT_URI, GOOGLE_SCOPES } from "../config"
 import { Either, Left, Right } from "../domain/errors/either"
 import { ErrorBase } from "../domain/errors/errorBase"
+import { AxiosHttpService } from "./utils/axiosHttpService"
 
 
 if(!GOOGLE_CLIENT_ID || !GOOGLE_SCOPES || !GOOGLE_REDIRECT_URI || !GOOGLE_AUTH_URI || !GOOGLE_CLIENT_SECRET) throw new Error("GOOGLE config not be is empty!")
@@ -65,3 +66,6 @@ export class GoogleOauth2 implements GoogleOauth2Interface{
 
 }
 
+const req = new AxiosHttpService()
+const google = new GoogleOauth2(req)
+console.log(google.createAuthURL())

@@ -8,7 +8,7 @@
     "test:usecases": "jest src/app/useCases/*.spec.ts",
     "test:repositories": "jest src/infra/repository/*.spec.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --respawn --transpile-only src/app/main/server.ts"
+    "dev": "ts-node-dev --respawn --transpile-only src/main/server.ts"
   },
   "keywords": [],
   "author": "",

@@ -59,8 +59,10 @@ export class PublishSubscribeMessage implements PublishSubscribeMessageInterface
         const sendMessageOrError = await this.sendMessage(channel,{idUser,message,userName})
         if(sendMessageOrError.left) return Left.create(sendMessageOrError.left)
 
-        channel.close()
-        connection.close()
+        setTimeout(async ()=>{
+            await channel.close()
+            await connection.close()
+        },1000)
 
         return Right.create(undefined)
         
@@ -100,7 +102,7 @@ export class PublishSubscribeMessage implements PublishSubscribeMessageInterface
             }
 
 
-        },{noAck:true})
+        },{noAck:false})
 
         return Right.create(undefined)
     }

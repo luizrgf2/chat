@@ -1,11 +1,8 @@
+import { MessagePublishInterface } from "../entities/messagePublish";
 import { Either } from "../errors/either";
 import { ErrorBase } from "../errors/errorBase";
 
-export interface MessagePublishInterface{
-    idUser:string,
-    userName:string,
-    message:string
-}
+
 
 export interface SendMessageToUserUseCaseInput{
     message:MessagePublishInterface   

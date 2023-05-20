@@ -1,5 +1,6 @@
 import { InMemoryUserRepository } from "../../../test/repositories/user"
 import { InMemoryGoogleOauth2 } from "../../../test/services/google"
+import { InMemoryJWT } from "../../../test/services/jwt"
 import { UserNotExistsError } from "../../domain/errors/user/userNotExists"
 import { TokenExpiredError } from "../errors/auth/tokenExpired"
 import { CreateUserWithGoogleUseCase } from "./createUserWithGoogle"
@@ -9,6 +10,7 @@ describe("createUserWithGoogleUseCase tests", function(){
 
     const repo = new InMemoryUserRepository()
     const google = new InMemoryGoogleOauth2()
+    const jwt = new InMemoryJWT()
     
     const createUser = new CreateUserWithGoogleUseCase(repo,google)
 
@@ -17,7 +19,7 @@ describe("createUserWithGoogleUseCase tests", function(){
             accessToken:"valid_token"
         })
 
-        const sut = new LoginUserWithGoogleUseCase(repo,google)
+        const sut = new LoginUserWithGoogleUseCase(repo,google,jwt)
 
         const res = await sut.exec({
             accessToken:"valid_token"
@@ -25,13 +27,14 @@ describe("createUserWithGoogleUseCase tests", function(){
 
         expect(res.right).not.toBeUndefined()
         expect(res.right).toHaveProperty("user")
+        expect(res.right).toHaveProperty("token")
         expect(res.right?.user).toHaveProperty("id")
         expect(res.right?.user).toHaveProperty("name")
         expect(res.right?.user).toHaveProperty("email")
     })
 
     it("should be able return error if try login with user not exists", async function(){
-        const sut = new LoginUserWithGoogleUseCase(repo,google)
+        const sut = new LoginUserWithGoogleUseCase(repo,google,jwt)
 
         const res = await sut.exec({
             accessToken:"another_token"
@@ -42,7 +45,7 @@ describe("createUserWithGoogleUseCase tests", function(){
     })
 
     it("should be able return error with invalid_token", async function(){
-        const sut = new LoginUserWithGoogleUseCase(repo,google)
+        const sut = new LoginUserWithGoogleUseCase(repo,google,jwt)
 
         const res = await sut.exec({
             accessToken:"invalid_token"

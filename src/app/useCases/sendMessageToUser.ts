@@ -2,13 +2,13 @@ import { MessagePublishEntity } from "../../domain/entities/messagePublish";
 import { Either, Left, Right } from "../../domain/errors/either";
 import { ErrorBase } from "../../domain/errors/errorBase";
 import { SendMessageToUserUseCaseInput, SendMessageToUserUseCaseInterface, SendMessageToUserUseCaseOutput} from "../../domain/useCases/sendMessageToUser"
-import { PublishMessageInterface } from "../interfaces/services/publishMessage";
+import { PublishSubscribeMessageInterface } from "../interfaces/services/publishMessage";
 
 
 export class SendMessageToUserUseCase implements SendMessageToUserUseCaseInterface{
     
     constructor(
-        private readonly messagePublisher:PublishMessageInterface
+        private readonly messagePublisher:PublishSubscribeMessageInterface
     ){}
 
     async sendMessage({message}:SendMessageToUserUseCaseInput):Promise<Either<ErrorBase,void>>{

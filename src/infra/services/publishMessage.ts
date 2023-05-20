@@ -3,7 +3,7 @@ import { RABBITMQ_EXCHANGE_CHATAPP_NAME } from "../../config";
 import { Either, Left, Right } from "../../domain/errors/either";
 import { ErrorBase } from "../../domain/errors/errorBase";
 import { RabbitMQConnector } from "./RabbitMqConnection";
-import { PublishSubscribeMessageInterface } from "../../app/interfaces/services/publishMessage";
+import { PublishSubscribeMessageInterface, ReceiveMessageInput } from "../../app/interfaces/services/publishMessage";
 import { MessagePublishInterface } from "../../domain/entities/messagePublish";
 
 
@@ -66,7 +66,7 @@ export class PublishMessage implements PublishSubscribeMessageInterface{
         
     }
 
-    async receive() : Promise<Either<ErrorBase, void>>{
+    async receive({receveFunc}:ReceiveMessageInput) : Promise<Either<ErrorBase, void>>{
         const connection = await RabbitMQConnector.connect()
         const channel = await connection.createChannel()
         
@@ -90,10 +90,13 @@ export class PublishMessage implements PublishSubscribeMessageInterface{
             if(message){
                 const content = JSON.parse(message.content.toString())
 
-                console.log("Receive message from :"+content.userName)
-                console.log("Receive message from id:"+content.idUser)
-
-                channel.ack(message)
+                receveFunc(content).then(value=>{
+                    if(value.left){
+                        channel.nack(message,false,true)
+                    }else{
+                        channel.ack(message)
+                    }
+                })
             }
 
 

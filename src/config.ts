@@ -9,5 +9,6 @@ export const {
     GOOGLE_REDIRECT_URI,
     GOOGLE_AUTH_URI,
     SERVER_PORT,
-    GOOGLE_CLIENT_SECRET
+    GOOGLE_CLIENT_SECRET,
+    RABBITMQ_URI
 } = process.env

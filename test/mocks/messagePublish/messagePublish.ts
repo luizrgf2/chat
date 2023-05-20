@@ -1,4 +1,4 @@
-import { MessagePublishInterface } from "../../../src/domain/useCases/sendMessageToUser";
+import { MessagePublishInterface } from "../../../src/domain/entities/messagePublish"
 
 export const ValidMessagePublish: MessagePublishInterface = {
     idUser:"c804305a-f6ae-11ed-b67e-0242ac120002",

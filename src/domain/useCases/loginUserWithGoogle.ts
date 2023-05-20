@@ -8,6 +8,7 @@ export interface LoginWithGoogleUseCaseInput{
 
 export interface LoginWithGoogleUseCaseOutput{
     user:UserInterface
+    token:string
 }
 
 

@@ -11,5 +11,6 @@ export const {
     SERVER_PORT,
     GOOGLE_CLIENT_SECRET,
     RABBITMQ_URI,
+    JWT_KEY,
     RABBITMQ_EXCHANGE_CHATAPP_NAME
 } = process.env

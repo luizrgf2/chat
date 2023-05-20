@@ -6,7 +6,7 @@ if(!RABBITMQ_URI) throw new Error("RABBITMQ_URL not is empty!")
 
 
 export class RabbitMQConnector{
-    async connect(){
+    static async connect(){
         const conn = await amqtlib.connect(RABBITMQ_URI||"")
         return conn
     }

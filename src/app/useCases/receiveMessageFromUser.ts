@@ -11,7 +11,10 @@ export class ReceiveMessageFromUserUseCase implements ReceiveMessageFromUserUseC
     ){}
     
     async receiveMessage(message:MessagePublishInterface):Promise<Either<ErrorBase,void>>{
-        console.log("Message receive :",message)
+        console.log("Receive message id :"+message.idUser)
+        console.log("Receive message name :"+message.userName)
+        console.log("Receive message message :"+message.message)
+
         return Right.create(undefined)
     }
 

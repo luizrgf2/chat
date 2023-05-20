@@ -9,7 +9,7 @@ import { MessagePublishInterface } from "../../domain/entities/messagePublish";
 
 if(!RABBITMQ_EXCHANGE_CHATAPP_NAME) throw new Error("RABBITMQ_EXCHANGE_CHATAPP_NAME not is empty!")
 
-export class PublishMessage implements PublishSubscribeMessageInterface{
+export class PublishSubscribeMessage implements PublishSubscribeMessageInterface{
 
     async createExchange(ch:Channel):Promise<Either<ErrorBase,void>>{
         try{

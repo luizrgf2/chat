@@ -46,6 +46,9 @@ export class PublishMessage implements PublishMessageInterface{
         const sendMessageOrError = await this.sendMessage(channel,{idUser,message,userName})
         if(sendMessageOrError.left) return Left.create(sendMessageOrError.left)
 
+        channel.close()
+        connection.close()
+
         return Right.create(undefined)
         
     }

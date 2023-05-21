@@ -15,7 +15,7 @@ export class SendMessageToUserController implements ControllerInterface{
         const res = await this.useCase.exec(body)
         if(res.left) return {status:res.left.code,error:res.left.message}
 
-        return {body:{message:body.message.message},status:200}
+        return {body:{message:body.message},status:200}
     }
 
 }

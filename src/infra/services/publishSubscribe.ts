@@ -1,4 +1,4 @@
-import { Channel } from "amqplib";
+import { Channel, Connection } from "amqplib";
 import { RABBITMQ_EXCHANGE_CHATAPP_NAME } from "../../config";
 import { Either, Left, Right } from "../../domain/errors/either";
 import { ErrorBase } from "../../domain/errors/errorBase";
@@ -9,7 +9,12 @@ import { MessagePublishInterface } from "../../domain/entities/messagePublish";
 
 if(!RABBITMQ_EXCHANGE_CHATAPP_NAME) throw new Error("RABBITMQ_EXCHANGE_CHATAPP_NAME not is empty!")
 
+
+
 export class PublishSubscribeMessage implements PublishSubscribeMessageInterface{
+
+    connectionConsummer?:Connection
+    channelConsummer?:Channel
 
     async createExchange(ch:Channel):Promise<Either<ErrorBase,void>>{
         try{
@@ -66,6 +71,21 @@ export class PublishSubscribeMessage implements PublishSubscribeMessageInterface
 
         return Right.create(undefined)
         
+    }
+
+    async closeConsummer():Promise<Either<ErrorBase,void>>{
+
+        try{
+            if(this.channelConsummer){
+                await this.channelConsummer.close()
+            }
+            if(this.connectionConsummer){
+                await this.connectionConsummer.close()
+            }
+        }catch(e){
+            return Left.create(new ErrorBase("Error to disconnect",500))
+        }
+        return Right.create(undefined)
     }
 
     async receive({receveFunc}:ReceiveMessageInput) : Promise<Either<ErrorBase, void>>{

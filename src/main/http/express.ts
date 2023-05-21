@@ -1,6 +1,6 @@
 import express,{Express} from "express"
 import cors from "cors"
-import { publicRoutes } from "../routes/publicRoutes"
+import { routes } from "../routes"
 
 class ExpressServer{
     app:Express
@@ -18,7 +18,7 @@ class ExpressServer{
     }
 
     private routes(){
-        this.app.use(publicRoutes)
+        this.app.use(routes)
     }
 
     public start(port?:number){

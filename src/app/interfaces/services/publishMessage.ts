@@ -6,7 +6,9 @@ export interface ReceiveMessageInput{
     receveFunc:(message:MessagePublishInterface)=>Promise<Either<ErrorBase,void>>
 }
 
+
 export interface PublishSubscribeMessageInterface{
     send:(message:MessagePublishInterface)=>Promise<Either<ErrorBase,void>>
     receive:(input:ReceiveMessageInput)=>Promise<Either<ErrorBase,void>>
+    closeConsummer:()=>Promise<Either<ErrorBase,void>>
 }

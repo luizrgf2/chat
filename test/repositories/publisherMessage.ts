@@ -6,6 +6,9 @@ import { ErrorBase } from "../../src/domain/errors/errorBase";
 export class InMemoryPublishMessage implements PublishSubscribeMessageInterface{
     messages:MessagePublishInterface[] = []
     
+    async closeConsummer () : Promise<Either<ErrorBase, void>>{
+        return Right.create(undefined)
+    }
     
     async send ({idUser,message,userName}: MessagePublishInterface) : Promise<Either<ErrorBase, void>>{
         return Right.create(undefined)

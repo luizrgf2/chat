@@ -5,9 +5,13 @@ import { SendMessageToUserFactory } from "../../presentation/factory/sendMessage
 export class SendMessageToUserExpressController{
 
     static async exec (req:Request,res:Response){
+        const id = req.headers.authorization||""
         const factory = SendMessageToUserFactory.handle()
         const useCase = await factory.exec({
-            body:req.body
+            body:{
+                idUser:id,
+                message:req.body.message
+            }
         })
         if(useCase.error){
             return res.status(useCase.status).json({error:useCase.error})

@@ -10,6 +10,6 @@ export interface FindUserUseCaseOutput{
     user:UserInterface
 }
 
-export interface FindUserUseCase{
+export interface FindUserUseCaseInterface{
     exec:(input:FindUserUseCaseInput)=>Promise<Either<ErrorBase,FindUserUseCaseOutput>>
 }

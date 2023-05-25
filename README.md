@@ -9,7 +9,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/luizrgf2/chat/blob/main/LICENSE)
 
-## SOBRE O PROJETO
+## SOBRE O PROJETO 
 
 O projeto ChatApp é bem simples de entender, é um chat de troca de mensagens entre usuários, mas o interessante da aplicação é a maneira como ela foi desenvolvida, porém por agora não entraremos em detalhes de implementação, vamos focar no funcionamento antes de entender como foi feita.
 
@@ -38,3 +38,21 @@ A principio acreditei que seria algo trivial de ser criado, pois eu já tinha co
 
 Eu tentarei passar minha visão sobre esse padrão da maneira mais simples possivel. O **RabbitMQ** ultiliza alguns padrões para definir quem cria e quem recebe a mensagem. Nesse sentido, quem cria a mensagem é chamado **Producer** e quem recebe a mensagem é chamado **Consumer**, da maneira mais simples possivel, esse padrão envia qualquer mensagem criada pelo **Producer** para todos os **Consumers** que estejam conectados ao **Producer**
 
+### TECNOLOGIAS USADAS
+
+ * expressjs
+ * rabbitmq
+ * socket.io
+ * jsonWebToken
+ * google Oauth2
+
+### TECNICAS DE SOFTWARE
+
+* Arquitetura limpa
+* Testes unitatios
+* Padrões de projeto
+     ```
+     Factory
+     Repository
+     Dependecy Injection
+     ```

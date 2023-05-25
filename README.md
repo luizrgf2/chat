@@ -56,3 +56,11 @@ Eu tentarei passar minha visão sobre esse padrão da maneira mais simples possi
      Repository
      Dependecy Injection
      ```
+
+### TELAS DA APLICAÇÃO
+    
+ * LOGIN E REGISTRO DE USUÁRIO USANDO O GOOGLE
+ <img src="documentation/images/login.png"></img>
+
+  * TELA DE CHAT EM TEMPO REAL
+ <img src="documentation/images/chat.png"></img>

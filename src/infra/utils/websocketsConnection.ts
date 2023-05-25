@@ -6,7 +6,12 @@ const app = express();
 
 const server = http.createServer(app);
 
-export const io = new Server(server);
+export const io = new Server(server,{
+  cors:{
+    origin:"*",
+    methods:["GET","POST"]
+  }
+});
 
 
 

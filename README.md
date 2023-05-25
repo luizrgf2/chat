@@ -45,6 +45,8 @@ Eu tentarei passar minha visão sobre esse padrão da maneira mais simples possi
  * socket.io
  * jsonWebToken
  * google Oauth2
+ * prisma
+ * mysql
 
 ### TECNICAS DE SOFTWARE
 
@@ -64,3 +66,6 @@ Eu tentarei passar minha visão sobre esse padrão da maneira mais simples possi
 
   * TELA DE CHAT EM TEMPO REAL
  <img src="documentation/images/chat.png"></img>
+
+### APLICAÇÃO FUNCIONANDO
+ <img src="documentation/images/appRun.gif"></img>

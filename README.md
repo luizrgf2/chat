@@ -1,71 +1,61 @@
+![Logo do ChatApp](documentation/images/chatAppLogo.png)
 
-<img 
-    src="documentation/images/chatAppLogo.png" style="border-radius : 20px; width : 400px;">
-<img>
+# CHAT APP
 
-
-
-<h1>CHAT APP</h1>
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/luizrgf2/chat/blob/main/LICENSE)
+[![Licença: MIT](https://img.shields.io/badge/Licença-MIT-green.svg)](https://github.com/luizrgf2/chat/blob/main/LICENSE)
 
 ## SOBRE O PROJETO 
 
-O projeto ChatApp é bem simples de entender, é um chat de troca de mensagens entre usuários, mas o interessante da aplicação é a maneira como ela foi desenvolvida, porém por agora não entraremos em detalhes de implementação, vamos focar no funcionamento antes de entender como foi feita.
+O projeto ChatApp é fácil de compreender: trata-se de um chat para a troca de mensagens entre usuários. No entanto, o interessante desta aplicação é a maneira como ela foi desenvolvida. Neste momento, vamos focar em seu funcionamento antes de entrar em detalhes sobre a implementação.
 
 ### FUNCIONAMENTO DA APLICAÇÃO
 
-* Criar usuários com conta google.
-    ```
-    A aplicação exigirá que uma conta do google sejá usada para registrar o usuário.
-    ```
-* Fazer login com conta google.
-    ```
-    A aplicação exigirá um login usando a conta google que você usou para criar o usuário.
-    ```
-* Encontrar usuários para trocar mensagens de texto
-    ```
-    Depois do login será possivel trocar mensagens de texto entre todos os usuários cadastrados.
-    ```
+- Criação de usuários com conta do Google:
+    - A aplicação exige que uma conta do Google seja utilizada para registrar o usuário.
+
+- Login com conta do Google:
+    - A aplicação requer um login utilizando a conta do Google utilizada para criar o usuário.
+
+- Troca de mensagens de texto entre usuários:
+    - Após o login, os usuários podem trocar mensagens de texto com todos os usuários cadastrados.
+
 ### DESAFIOS
 
+Desde o início, quando tive a ideia de desenvolver esta aplicação, estava pensando em uma forma de utilizar um message broker e logo pensei em um chat para a troca de mensagens, onde todos os usuários pudessem ver e enviar mensagens. Em seguida, percebi que poderia usar algum sistema de autenticação para aprimorar e tornar a aplicação mais profissional. Além de tudo isso, escolhi utilizar a API do Google para implementar toda a parte de autenticação.
 
-Desde o começo quando eu tive a ideia para desenvolver esta aplicação, eu estava pensando em alguma aplicabilidade para um message broker e logo pensei em um chat de troca de mensagens, onde todos os usuários poreriam ver e mandar mensagens. Logo em seguida, achei que poderia usar algum sistema de autenticação para enriquecer e deixar a aplicação mais profissional. Alem de tudo isso, eu escolhi usar a api do googe para fazer toda a parte de autenticação.
-
-A principio acreditei que seria algo trivial de ser criado, pois eu já tinha consumido a api do google outras vezes, já integrei o banco mysql a uma aplicação centenas de vezes, porem usar um message brocker foi algo completamete novo, e eu teria que entender o padrão [**publish/subcribe**](https://www.rabbitmq.com/tutorials/tutorial-three-javascript.html) que a documentação do rabbitmq fornece, e eu acabei me confundindo muitas vezes sobre como funcionava, mas felizmente o desafio foi superado.
+Inicialmente, acreditei que seria algo trivial de ser criado, pois já havia utilizado a API do Google em outras ocasiões e já havia integrado bancos de dados MySQL em diversas aplicações. Porém, o uso de um message broker foi completamente novo para mim, e tive que compreender o padrão [**publish/subscribe**](https://www.rabbitmq.com/tutorials/tutorial-three-javascript.html) fornecido pela documentação do RabbitMQ. Confesso que me confundi várias vezes em relação ao seu funcionamento, mas felizmente consegui superar esse desafio.
 
 ### PADRÃO PUBLISH/SUBSCRIBE
 
-Eu tentarei passar minha visão sobre esse padrão da maneira mais simples possivel. O **RabbitMQ** ultiliza alguns padrões para definir quem cria e quem recebe a mensagem. Nesse sentido, quem cria a mensagem é chamado **Producer** e quem recebe a mensagem é chamado **Consumer**, da maneira mais simples possivel, esse padrão envia qualquer mensagem criada pelo **Producer** para todos os **Consumers** que estejam conectados ao **Producer**
+Vou tentar explicar o padrão de forma simples. O **RabbitMQ** utiliza alguns padrões para definir quem envia e quem recebe as mensagens. Nesse sentido, quem envia a mensagem é chamado de **Produtor** (Producer) e quem recebe a mensagem é chamado de **Consumidor** (Consumer). De maneira resumida, esse padrão envia qualquer mensagem criada pelo **Produtor** para todos os **Consumidores** conectados ao **Produtor**.
 
-### TECNOLOGIAS USADAS
+### TECNOLOGIAS UTILIZADAS
 
- * expressjs
- * rabbitmq
- * socket.io
- * jsonWebToken
- * google Oauth2
- * prisma
- * mysql
+- Express.js
+- RabbitMQ
+- Socket.IO
+- JSON Web Token
+- Google OAuth2
+- Prisma
+- MySQL
 
-### TECNICAS DE SOFTWARE
+### TÉCNICAS DE DESENVOLVIMENTO
 
-* Arquitetura limpa
-* Testes unitatios
-* Padrões de projeto
-     ```
-     Factory
-     Repository
-     Dependecy Injection
-     ```
+- Arquitetura limpa
+- Testes unitários
+- Padrões de projeto utilizados:
+    - Factory
+    - Repository
+    - Dependency Injection
 
-### TELAS DA APLICAÇÃO
-    
- * LOGIN E REGISTRO DE USUÁRIO USANDO O GOOGLE
+### SCREENSHOTS DA APLICAÇÃO
+
+- LOGIN E REGISTRO DE USUÁRIO UTILIZANDO O GOOGLE
  <img src="documentation/images/login.png"></img>
 
-  * TELA DE CHAT EM TEMPO REAL
+- TELA DE CHAT EM TEMPO REAL
  <img src="documentation/images/chat.png"></img>
 
-### APLICAÇÃO FUNCIONANDO
+
+- APLICAÇÃO FUNCIONANDO
  <img src="documentation/images/appRun.gif"></img>

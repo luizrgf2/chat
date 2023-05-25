@@ -7,4 +7,4 @@ export const privateRoutes = Router()
 privateRoutes.use(PrivateRouteMiddleware)
 
 privateRoutes.post("/user/message/send",SendMessageToUserExpressController.exec)
-privateRoutes.post("/user/find",FindUserExpressController.exec)
+privateRoutes.get("/user/find",FindUserExpressController.exec)

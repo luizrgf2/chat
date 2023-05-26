@@ -7,3 +7,11 @@ services:
     container_name: mysql-db-chat
     ports:
       - "3304:3306"
+  rabbitmq:
+    image: rabbitmq:3.11-management
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
+    ports:
+      - 5672:5672
+      - 15672:15672

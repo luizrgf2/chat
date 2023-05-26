@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build":"tsc",
+    "start" : "node dist/src/main/server.js",
+    "websocket":"node dist/src/main/websocket/index.js",
     "test:entities": "jest src/domain/entities/*.spec.ts",
     "test:usecases": "jest src/app/useCases/*.spec.ts",
     "test:repositories": "jest src/infra/repository/*.spec.ts",

@@ -4,6 +4,7 @@
   "description": "Um chat de texto para conversas entre amigos.",
   "main": "index.js",
   "scripts": {
+    "build":"tsc",
     "test:entities": "jest src/domain/entities/*.spec.ts",
     "test:usecases": "jest src/app/useCases/*.spec.ts",
     "test:repositories": "jest src/infra/repository/*.spec.ts",

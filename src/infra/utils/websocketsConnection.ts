@@ -1,6 +1,11 @@
 import express from "express";
 import http from "http";
 import { Server } from "socket.io";
+import { WEB_SOCKET_PORT } from "../../config";
+
+
+if(!WEB_SOCKET_PORT) throw new Error("WEB_SOCKET_PORT not be is empty!")
+
 
 const app = express();
 
@@ -15,7 +20,6 @@ export const io = new Server(server,{
 
 
 
-const port = 8080;
-server.listen(port, () => {
-  console.log(`Servidor Socket.IO iniciado em http://localhost:${port}`);
+server.listen(WEB_SOCKET_PORT, () => {
+  console.log(`Servidor Socket.IO iniciado em http://localhost:${WEB_SOCKET_PORT}`);
 });

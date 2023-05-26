@@ -36,11 +36,15 @@ export class GoogleOauth2 implements GoogleOauth2Interface{
     async getTokens(code:string):Promise<Either<ErrorBase,GoogleToken>>{
         const url = "https://accounts.google.com/o/oauth2/token"
 
+        const redirectURI = decodeURIComponent(this.redirectUri)
+
+        console.log(redirectURI)
+
         const data = {
             code: decodeURIComponent(code),
             client_id: this.clientId,
             client_secret: this.clientSecret,
-            redirect_uri: decodeURIComponent(this.redirectUri),
+            redirect_uri: redirectURI,
             grant_type: 'authorization_code'
         }
 

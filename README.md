@@ -59,3 +59,15 @@ Vou tentar explicar o padrão de forma simples. O **RabbitMQ** utiliza alguns pa
 
 - APLICAÇÃO FUNCIONANDO
  <img src="documentation/images/appRun.gif"></img>
+
+## VEJA A APLICAÇÃO VOCE MESMO
+
+- A hospedagem foi realizada usando uma instância do Lightsail da AWS.
+
+- O RabbitMQ está instalado na mesma máquina que a aplicação, o que não é uma boa prática quando se trata de aplicações que visam escalabilidade. No entanto, isso é apenas uma demonstração e não temos como objetivo a escalabilidade.
+
+- O banco de dados está hospedado no serviço https://planetscale.com/.
+
+- O domínio foi comprado no site https://www.hostinger.com/.
+
+<a style="border: 1px solid black; padding:10px; background-color: rgb(0, 189, 0); border-radius:10px">TESTE AGORA</a>

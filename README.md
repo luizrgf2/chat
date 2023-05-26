@@ -70,4 +70,4 @@ Vou tentar explicar o padrão de forma simples. O **RabbitMQ** utiliza alguns pa
 
 - O domínio foi comprado no site https://www.hostinger.com/.
 
-<a style="border: 1px solid black; padding:10px; background-color: rgb(0, 189, 0); border-radius:10px">TESTE AGORA</a>
+ - Você pode testar a aplicação aqui <a href="https://chat-app.online/" style="border: 1px; solid black; padding:10px;    background-color: #8112ac; color: white;border-radius:10px">TESTE AGORA</a>

@@ -38,7 +38,6 @@ export class GoogleOauth2 implements GoogleOauth2Interface{
 
         const redirectURI = decodeURIComponent(this.redirectUri)
 
-        console.log(redirectURI)
 
         const data = {
             code: decodeURIComponent(code),

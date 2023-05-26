@@ -40,7 +40,7 @@ export class GoogleOauth2 implements GoogleOauth2Interface{
             code: decodeURIComponent(code),
             client_id: this.clientId,
             client_secret: this.clientSecret,
-            redirect_uri: this.redirectUri,
+            redirect_uri: decodeURIComponent(this.redirectUri),
             grant_type: 'authorization_code'
         }
 

@@ -60,7 +60,7 @@ Vou tentar explicar o padrão de forma simples. O **RabbitMQ** utiliza alguns pa
 - APLICAÇÃO FUNCIONANDO
  <img src="documentation/images/appRun.gif"></img>
 
-## VEJA A APLICAÇÃO VOCE MESMO
+## VEJA A APLICAÇÃO VOCÊ MESMO
 
 - A hospedagem foi realizada usando uma instância do Lightsail da AWS.
 

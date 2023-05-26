@@ -1,0 +1,1 @@
+{"version":3,"file":"tokenExpired.js","sourceRoot":"","sources":["../../../../../src/app/errors/auth/tokenExpired.ts"],"names":[],"mappings":";;;AAAA,gEAA6D;AAE7D,MAAa,iBAAkB,SAAQ,qBAAS;IAC5C;QACI,KAAK,CAAC,6BAA6B,EAAC,GAAG,CAAC,CAAA;IAC5C,CAAC;CACJ;AAJD,8CAIC"}

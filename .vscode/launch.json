@@ -25,7 +25,7 @@
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "program": "${workspaceFolder}/node_modules/jest/bin/jest.js",
-            "args": ["--runInBand", "src/app/useCases/sendMessageToUser.spec.ts"],
+            "args": ["--runInBand", "src/app/useCases/findUser.spec.ts"],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "env": {

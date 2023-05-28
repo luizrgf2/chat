@@ -64,7 +64,7 @@ Vou tentar explicar o padrão de forma simples. O **RabbitMQ** utiliza alguns pa
 
 - A hospedagem foi realizada usando uma instância do Lightsail da AWS.
 
-- O RabbitMQ está instalado na mesma máquina que a aplicação, o que não é uma boa prática quando se trata de aplicações que visam escalabilidade. No entanto, isso é apenas uma demonstração e não temos como objetivo a escalabilidade.
+- O RabbitMQ foi hospedado no site https://www.cloudamqp.com/
 
 - O banco de dados está hospedado no serviço https://planetscale.com/.
 

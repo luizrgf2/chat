@@ -60,16 +60,3 @@ Vou tentar explicar o padrão de forma simples. O **RabbitMQ** utiliza alguns pa
 - APLICAÇÃO FUNCIONANDO
  <img src="documentation/images/appRun.gif"></img>
 
-## VEJA A APLICAÇÃO VOCÊ MESMO
-
-- A hospedagem foi realizada usando uma instância do Lightsail da AWS.
-
-- O RabbitMQ foi hospedado no site https://www.cloudamqp.com/
-
-- O banco de dados está hospedado no serviço https://planetscale.com/.
-
-- O domínio foi comprado no site https://www.hostinger.com/.
-
-- O repositório do frontend, lembrando que o foco do projeto não é o frontend https://github.com/luizrgf2/chatFrontend
-
- - Você pode testar a aplicação aqui <a href="https://chat-app.online/">TESTE AGORA</a>
